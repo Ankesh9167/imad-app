@@ -48,7 +48,8 @@ var  articles = {
                 There were no apparent weaknesses in Tendulkar's game. He could score all around the wicket, off both front foot and back, could tune his technique to suit every condition, temper his game to suit every situation, and made runs in all parts of the world in all conditions
             </p>`
         
-    };
+    }
+};
    
 function createTemplates(data) {
     var title = data.title;
