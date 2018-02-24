@@ -3,4 +3,5 @@ console.log('Loaded!');
 var img = document.getElementById('mov');
 img.onclick =function() {
     img.style.marginLeft = '100px';
+     img.style.marginDown = '100px';
 }
