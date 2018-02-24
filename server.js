@@ -22,7 +22,7 @@ var  articles = {
             </p>`
 },
    ' article-two': {
-   title : "Article-two !Ankesh!",
+   //title : "Article-two !Ankesh!",
     heading : "Article two;",
     date : "25 feb 2018",
     content:  `<p>
@@ -51,7 +51,7 @@ var  articles = {
     }
 };
 function createTemplates(data) {
-    var title = data.tile;
+    var title = data.title;
     var date = data.date;
     var content = data.content;
     var heading = data.heading;
