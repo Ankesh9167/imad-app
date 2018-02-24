@@ -3,7 +3,7 @@ console.log('Loaded!');
 var img = document.getElementById('mov');
 var marginLeft = 0;
 function  moveRight() {
-   marginLeft +=1;
+   marginLeft +=10000;
    img.style.marginLeft = marginLeft +   'px';
 }
 img.onclick =function() {
