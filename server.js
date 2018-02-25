@@ -5,8 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var  articles = {
-'article-one': {
+var articleone = {
     title : "Article-one !Ankesh!",
     heading : "Article one",
     date : "24 feb 2018",
@@ -20,8 +19,8 @@ var  articles = {
             <p>
                 Some of his finest performances came against Australia, the overwhelmingly dominant team of his era. His century as a 19-year-old on a lightning-fast pitch at the WACA is considered one of the best innings ever to have been played in Australia. A few years later he received the ultimate compliment from the ultimate batsman: Don Bradman confided to his wife that Tendulkar reminded him of himself.
             </p>`
-},
-'article-two': {
+};
+//'article-two': {
     title : "Article-2 !Ankesh!",
     heading : "Article 2;",
     date : "28 feb 2018",
@@ -30,7 +29,7 @@ var  articles = {
            
             </p>`
 },
-'article-three':{
+//'article-three':{
          title : "Article-three !Ankesh!",
     heading : "Article three",
     date : "26 feb 2018",
@@ -43,7 +42,7 @@ var  articles = {
             </p>`
         
     }
-};
+//};
 
 function createTemplates(data) {
     var title = data.title;
@@ -89,7 +88,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/article-one',function(req,res){
-   res.send(createTemplates(article-one));
+   res.send(createTemplates(articleone));
 });
 /*app.get('/:articleName',function(req, res){
     var articleName = req.params.articleName;
