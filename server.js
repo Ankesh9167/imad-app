@@ -6,9 +6,9 @@ var app = express();
 app.use(morgan('combined'));
 
 var  articles = {
-    'article-one': {
+'article-one': {
     title : "Article-one !Ankesh!",
-    heading : "Article one;",
+    heading : "Article one",
     date : "24 feb 2018",
     content:  `<p>
                  Sachin Tendulkar has been the most complete batsman of his time, the most prolific runmaker of all time, and arguably the biggest cricket icon the game has ever known. His batting was based on the purest principles: perfect balance, economy of movement, precision in stroke-making, and that intangible quality given only to geniuses - anticipation. If he didn't have a signature stroke - the upright, back-foot punch comes close - it's because he was equally proficient at each of the full range of orthodox shots (and plenty of improvised ones as well) and can pull them out at will.
@@ -30,8 +30,7 @@ var  articles = {
            
             </p>`
 },
-   
-    'article-three':{
+'article-three':{
          title : "Article-three !Ankesh!",
     heading : "Article three",
     date : "26 feb 2018",
@@ -45,9 +44,9 @@ var  articles = {
         
     }
 };
-   
+
 function createTemplates(data) {
-     var title = data.title ;
+    var title = data.title;
     var date = data.date;
     var content = data.content;
     var heading = data.heading;
@@ -89,7 +88,7 @@ app.get('/counter',function(req,res){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/:articleName',function(req,res){
+app.get('/:articleName',function(req, res){
     var articleName = req.params.articleName;
   res.send(createTemplates(articles[articleName])); 
 });
