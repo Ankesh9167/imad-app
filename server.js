@@ -84,7 +84,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 var names = [];
 app.get('/send_name/:name',function(req,res) {
-    var name = req.params.name();
+    var name = req.params.name;
     name.push(name);
     res.send(JSON.stringiyfy(names));
 });
