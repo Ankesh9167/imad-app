@@ -15,7 +15,7 @@ var  articles = {
                 
             </p>
             <p>
-                There were no apparent weaknesses in Tendulkar's game. He could score all around the wicket, off both front foot and back, could tune his technique to suit every condition, temper his game to suit every situation, and made runs in all parts of the world in all conditions
+                There were no apparent weaknesses in Tendulkar's game. He could score all around the wicket, off both front foot and back, jsoncould tune his technique to suit every condition, temper his game to suit every situation, and made runs in all parts of the world in all conditions
             </p>
             <p>
                 Some of his finest performances came against Australia, the overwhelmingly dominant team of his era. His century as a 19-year-old on a lightning-fast pitch at the WACA is considered one of the best innings ever to have been played in Australia. A few years later he received the ultimate compliment from the ultimate batsman: Don Bradman confided to his wife that Tendulkar reminded him of himself.
@@ -88,10 +88,13 @@ app.get('/counter',function(req,res){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/:articleName',function(req, res){
+app.get('/article-one',function(req,res){
+   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+});
+/*app.get('/:articleName',function(req, res){
     var articleName = req.params.articleName;
   res.send(createTemplates(articles[articleName])); 
-});
+});*/
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
