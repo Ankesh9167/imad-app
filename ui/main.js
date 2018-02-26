@@ -93,7 +93,7 @@ button.onclick = function () {
           
           // make request
           var nameInput = document.getElementById('comment');
-  var comment= nameInput.value;
+  var comment= commentInput.value;
         request.open('GET','http://ankeshphapale1234.imad.hasura-app.io/submit-comment?comment=' +comment ,true);
           request.send(null);   
  
