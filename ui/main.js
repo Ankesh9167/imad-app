@@ -44,7 +44,7 @@ button.onclick = function () {
          var i;
         for(i =0;i<names.length;i++)
            {
-       list +=' <li>' + names[i] + '</li>';
+       list +='<li>'+names[i]+'</li>';
      
             }
         var ul = document.getElementById('namelist');
@@ -58,7 +58,7 @@ button.onclick = function () {
           // make request
           var nameInput = document.getElementById('name');
   var name = nameInput.value;
-        request.open('GET','http://ankeshphapale1234.imad.hasura-app.io/submit-name?name='+name ,true);
+        request.open('GET','http://ankeshphapale1234.imad.hasura-app.io/submit-name?name=' +name ,true);
           request.send(null);   
  
   
