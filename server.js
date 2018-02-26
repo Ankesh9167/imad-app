@@ -51,6 +51,8 @@ var htmlTemplates =
          ${content};  
             
         </div>
+        <input type = "text" id = "name" placeholder = "name"></input>
+         <input type = "submit" value ="submit"  id = "submit_btn"></input>
         </div>
     </body>
 </html>
