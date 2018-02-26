@@ -70,7 +70,7 @@ app.get('/submit-name',function(req,res) {
     names.push(name);
     res.send(JSON.stringify(names));
 });
-app.get('/submit-comment',function(req,res) {
+app.get('/submit1-comment',function(req,res) {
     var name = req.query.comment;
     names.push(comment);
     res.send(JSON.stringify(comment));
