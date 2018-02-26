@@ -76,15 +76,15 @@ button.onclick = function () {
         if (request.status === 200) {
            var comments = request.responseText
            comment == JSON.parse(comments);
-        var list = '';
+        var list1 = '';
          var i;
-        for(i =0;i<names.length;i++)
+        for(i =0;i<comments.length;i++)
            {
-       list +='<li>'+comments[i]+'</li>';
+       list1 +='<li>'+comments[i]+'</li>';
      
             }
-        var ul = document.getElementById('namelist');
-        ul.innerHTML =list; 
+        var ul = document.getElementById('namelist1');
+        ul.innerHTML =list1; 
             
         }
         }
@@ -94,7 +94,7 @@ button.onclick = function () {
           // make request
           var nameInput = document.getElementById('comment');
   var comment= nameInput.value;
-        request.open('GET','http://ankeshphapale1234.imad.hasura-app.io/submit-name?name=' +commment ,true);
+        request.open('GET','http://ankeshphapale1234.imad.hasura-app.io/submit-comment?comment=' +comment ,true);
           request.send(null);   
  
   
