@@ -51,7 +51,7 @@ var htmlTemplates =
          ${content};  
             
         </div>
-        <input type = "text1" id = "name1" placeholder = "name1"></input>
+        <input type = "text1" id = "comment" placeholder = "comment"></input>
          <input type = "submit1" value ="submit1"  id = "submit_btn1"></input>
          <ul id = 'namelist1'>    
           </ul>
