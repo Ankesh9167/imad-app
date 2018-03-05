@@ -68,7 +68,7 @@ var htmlTemplates =
 `;
 return htmlTemplates;
 }
-/*var pool = new pool(config);
+var Pool = new Pool(config);
 app.get('/test-db',function(req,res){
   pool.query('SELECT * FROM test',function(err,result){
       if(err){
@@ -81,7 +81,7 @@ app.get('/test-db',function(req,res){
       
       
   });
-});*/
+});
 var counter=0;
 app.get('/counter',function(req,res){
     counter +=1;
