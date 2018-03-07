@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
+var bodyParser = require('body-parser');
 var config = {
     user : 'ankeshphapale1234',
     database: 'ankeshphapale1234',
@@ -12,13 +13,14 @@ var config = {
 };
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyParser.json);
 
 var articleone = {
     title : "Article-one !Ankesh!",
     heading : "Article one",
     date : "24 feb 2018",
     content:  `<p>
-                 Sachin Tendulkar has been the most complete batsman of his time, the most prolific runmaker of all time, and arguably the biggest cricket icon the game has ever known. His batting was based on the purest principles: perfect balance, economy of movement, precision in stroke-making, and that intangible quality given only to geniuses - anticipation. If he didn't have a signature stroke - the upright, back-foot punch comes close - it's because he was equally proficient at each of the full range of orthodox shots (and plenty of improvised ones as well) and can pull them out at will.
+                 Sachin Tendulkar has been the most complete batsman of his time, the most prolific runmaker of all time, 1and arguably the biggest cricket icon the game has ever known. His batting was based on the purest principles: perfect balance, economy of movement, precision in stroke-making, and that intangible quality given only to geniuses - anticipation. If he didn't have a signature stroke - the upright, back-foot punch comes close - it's because he was equally proficient at each of the full range of orthodox shots (and plenty of improvised ones as well) and can pull them out at will.
                 
             </p>
             <p>
@@ -85,6 +87,7 @@ app.get('/test-db',function(req,res){
 });
 
 
+
 function hash (input,salt) {
     var hashed = crypto.pbkdf2Sync(input,salt,10000,64,'sha512');
     return ['pbkdf2sync','10000','salt',hashed.toString('hex')].join('$');
@@ -93,6 +96,25 @@ app.get('/hash/:input',function(req,res){
     var hashedString = hash(req.params.input,'thise-is-randome-string');
     res.send(hashedString);
 });
+app.post('/creat-user',function(req,res){
+    var username = rec.body.username;
+    var password = rec.body.password;
+    var salt = crypto.getRandomBytes(128).toString();
+    var dbString = hash(password,salt);
+    Pool.query('INSERT INTO "user"(username,password) VALUES ($1,$2)',[username,dbString],function(err,result){
+      if(err){
+          res.status(500).send(err.toString());
+      }
+      else 
+      {
+          res.send("user succesfully created" +username);
+      }
+    }); 
+      
+  });
+ 
+    
+
 var counter=0;
 app.get('/counter',function(req,res){
     counter +=1;
