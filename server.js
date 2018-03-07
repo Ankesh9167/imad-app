@@ -90,7 +90,7 @@ function hash (input,salt) {
     return hashed.toString('hex');
 }
 app.get('/hash/:input',function(req,res){
-    var hashedString = hash(request.params.input,'thise-is-randome-string');
+    var hashedString = hash(req.params.input,'thise-is-randome-string');
     res.send(hashedString);
 });
 var counter=0;
