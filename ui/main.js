@@ -37,8 +37,8 @@ button.onclick = function () {
       request.onreadystatechange = function() {
           if (request.readyState === XMLHttpRequest.DONE) {
               //take some action
-        if (request.status === 100) {
-           var names = request.responseText
+        if (request.status === 200) {
+           var names = request.responseText;
            names == JSON.parse(names);
         var list = '';
          var i;
@@ -63,7 +63,7 @@ button.onclick = function () {
  
   
   };
-  var submit1 = document.getElementById('submit1_btn');
+ /* var submit1 = document.getElementById('submit1_btn');
   submit1.onclick = function() {
       
    //creat a request object
@@ -96,8 +96,7 @@ button.onclick = function () {
   var comment= commentInput.value;
         request.open('GET','http://ankeshphapale1234.imad.hasura-app.io/submit-comment?comment=' +comment ,true);
           request.send(null);   
- 
+ */
   
-  };
   
   
