@@ -74,7 +74,7 @@ button.onclick = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
               //take some action
         if (request.status === 200) {
-           var comments = request.responseText
+           var comments = request.responseText;
            comment == JSON.parse(comments);
         var list1 = '';
          var i;
